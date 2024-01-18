@@ -1,0 +1,56 @@
+.container {
+  text-align: center;
+  //background-color: aqua;
+  width: 100%;
+}
+
+h1 {
+  color: #333;
+  font-family: "Cinzel Decorative", serif;
+  font-weight: bold;
+  text-align: left;
+}
+
+p {
+  color: black;
+  font-family: "Mulish", serif;
+  text-align: left;
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+}
+
+.container-presentation{
+  margin: 50px;
+  width: 35%;
+  height: auto;
+
+}
+
+button {
+  margin: 25px;
+  background-color: rgb(76, 162,168, 20%);
+  font-weight: bold;
+  font-family: "Mulish", serif;
+  color: black;
+  border: 1px solid #ACD4D7;
+  padding: 10px 20px;
+  text-align: center;
+  text-transform: uppercase;
+  box-shadow: 0 4px 4px rgb(99,99,99,25%), inset 0 4px rgb(99,99,99,5%);
+  transition: all 0.3s ease;
+
+}
+button:hover {
+  border-width: 2px;
+  font-size: 110%;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
