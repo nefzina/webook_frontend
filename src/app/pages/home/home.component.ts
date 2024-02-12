@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import {HeaderComponent} from "../../components/header/header.component";
 import {FooterComponent} from "../../components/footer/footer.component";
-import {LoginComponent} from "../../login/login.component";
-import {RegisterComponent} from "../../register/register.component";
+import {LoginComponent} from "../login/login.component";
+import {RegisterComponent} from "../register/register.component";
 
 @Component({
   selector: 'app-home',

@@ -1,12 +1,12 @@
-import { Routes } from '@angular/router';
-// src/app/app-routing.module.ts
-import { RouterModule } from '@angular/router';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
-import { NgModule } from '@angular/core';
-export const routes: Routes = [
+
+const routes: Routes = [
+  //creer un {path: '', component: LoginComponent} avant la page d'accueil
   { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
+  { path: 'register', component: RegisterComponent }
 
 ];
 
@@ -15,5 +15,3 @@ export const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-
-
