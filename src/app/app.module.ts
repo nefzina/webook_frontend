@@ -10,7 +10,7 @@ import {HomeComponent} from "./pages/home/home.component";
 
 @NgModule({
   declarations: [
-    AppComponent,
+
 
   ],
   imports: [
@@ -19,6 +19,6 @@ import {HomeComponent} from "./pages/home/home.component";
     HttpClientModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: []
 })
 export class AppModule { }
