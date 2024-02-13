@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {MatIconModule} from "@angular/material/icon";
 import {MatMenuModule} from "@angular/material/menu";
 import {MatToolbarModule} from "@angular/material/toolbar";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-header',
@@ -15,7 +16,18 @@ import {MatToolbarModule} from "@angular/material/toolbar";
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
+  loggedUser: any;
+  constructor(private router: Router) {
+    const localUser = localStorage.getItem('loggedUser');
+    if(localUser != null) {
+      this.loggedUser = JSON.parse(localUser);
+    }
+  }
 
+  onLogoff() {
+    localStorage.removeItem('loggedUser');
+    this.router.navigateByUrl('/login')
+  }
 
 }
 function myFunction() {
