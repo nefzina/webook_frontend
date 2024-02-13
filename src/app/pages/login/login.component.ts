@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormControl, FormGroup } from '@angular/forms';
+import {HeaderComponent} from "../../components/header/header.component";
 
 
 @Component({

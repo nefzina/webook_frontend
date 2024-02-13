@@ -1,42 +1,23 @@
 <header>
-  <label>☰</label>
-  <input type="checkbox" id="toggle">
-  <mat-icon>public</mat-icon>
-  <span class="spacer"></span>
-  <div class="center" id="myLinks">
-    <a href="#">Accueil</a>
-    <a href="#">Recherche</a>
-    <span class="webook">WeBooK</span>
-    <a href="#">Conversation</a>
-    <a href="#">Guide</a>
-  </div>
-  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-    <i class="fa fa-bars"></i>
-  </a>
-  <img class="miniature_profile" src="#" alt="Profile Picture">
-  <a href="#">Mon profil</a>
-  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <div class="container-fluid">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" href="#">Active</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#">Disabled</a>
-        </li>
-      </ul>
-      <form class="d-flex">
-        <span class="text-white">{{loggedUser?.email}} </span>
-        <button class="btn btn-primary" type="button" (click)="onLogoff()">LogOff</button>
-      </form>
+  <header>
+    <label>☰</label>
+    <input type="checkbox" id="toggle">
+    <mat-icon>public</mat-icon>
+    <span class="spacer"></span>
+    <div class="center" id="myLinks">
+      <a href="#">Accueil</a>
+      <a href="#">Recherche</a>
+      <span class="webook">WeBooK</span>
+      <a href="#">Conversation</a>
+      <a href="#">Guide</a>
     </div>
-  </nav>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+    <img class="miniature_profile" src="#" alt="Profile Picture">
+    <a href="#">Mon profil</a>
+
+  </header>
 
 
 </header>
