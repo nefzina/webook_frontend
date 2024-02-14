@@ -67,6 +67,11 @@ export class LoginComponent {
 
           console.log(loginModel);
 
+          const checkbox = document.getElementById('chk') as HTMLInputElement;
+          if (checkbox) {
+            checkbox.checked = true;
+          }
+
           this.router.navigate(['/home']);
         } else {
           console.error('Form controls do not have values'); // Affiche une erreur si les contrôles n'ont pas de valeurs
