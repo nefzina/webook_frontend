@@ -26,7 +26,15 @@ p {
   margin: 50px;
   width: 35%;
   height: auto;
+  position: relative;
 
+}
+.banner-img {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+
+  position: absolute;
 }
 
 button {
@@ -52,10 +60,7 @@ button:active {
   transform: scale(0.95);
 }
 
-img {
-  width: 100%;
-  height: auto;
-}
+
 
 .container-titre-recommendation{
   padding-left: 18%;
@@ -67,6 +72,7 @@ img {
 
 }
 .container-recommendation {
+
   text-align: center;
   padding-left: 15%;
   padding-right: 15%;

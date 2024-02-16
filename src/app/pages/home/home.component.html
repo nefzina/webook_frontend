@@ -1,71 +1,77 @@
 <div class="container">
+  <img class="banner-img" src="#" alt="Bookshelf image">
+
   <div class="container-presentation">
     <h1>ECHANGE TES LIVRES</h1>
     <p>WeBook est une plateforme pour les amateurs de livres qui cherchent à échanger leurs trésors préférés et découvrir de nouveaux auteurs. Notre communauté de lecteurs passionnés facilite la recherche de votre prochaine venture littéraire en partageant leurs expériences.</p>
     <button>Chercher un livre</button>
     <button>Publier un livre</button>
   </div>
-  <img src="#" alt="Bookshelf image">
 </div>
 
 <p class="container-titre-recommendation">Recommendation</p>
 
-<div class="container-recommendation">
-  <a [routerLink]="['/page-book/id']">
-    <img class="picture-book" src="assets/pictures/Book_inconnu.png" alt="book picture">
+<div class="container-recommendation" *ngFor="let mockBook of mockBooks">
+  <a [routerLink]="['page-book', mockBook.id]">
+    <img class="picture-book" [src]="mockBook.image" alt="book picture">
   </a>
-  <a [routerLink]="['/page-book/id']">
-    <img class="picture-book" src="assets/pictures/Book_inconnu.png" alt="book picture">
-  </a>
-  <a [routerLink]="['/page-book/id']">
-    <img class="picture-book" src="assets/pictures/Book_inconnu.png" alt="book picture">
-  </a>
-  <a [routerLink]="['/page-book/id']">
-    <img class="picture-book" src="assets/pictures/Book_inconnu.png" alt="book picture">
-  </a>
-  <a [routerLink]="['/page-book/id']">
-    <img class="picture-book" src="assets/pictures/Book_inconnu.png" alt="book picture">
-  </a>
-  <a [routerLink]="['/page-book/id']">
-    <img class="picture-book" src="assets/pictures/Book_inconnu.png" alt="book picture">
-  </a>
-
-  <a [routerLink]="['/page-book/id']">
-    <img class="picture-book" src="assets/pictures/Book_inconnu.png" alt="book picture">
-  </a>
-  <a [routerLink]="['/page-book/id']">
-    <img class="picture-book" src="assets/pictures/Book_inconnu.png" alt="book picture">
-  </a>
-  <a [routerLink]="['/page-book/id']">
-    <img class="picture-book" src="assets/pictures/Book_inconnu.png" alt="book picture">
-  </a>
-  <a [routerLink]="['/page-book/id']">
-    <img class="picture-book" src="assets/pictures/Book_inconnu.png" alt="book picture">
-  </a>
-  <a [routerLink]="['/page-book/id']">
-    <img class="picture-book" src="assets/pictures/Book_inconnu.png" alt="book picture">
-  </a>
-  <a [routerLink]="['/page-book/id']">
-    <img class="picture-book" src="assets/pictures/Book_inconnu.png" alt="book picture">
-  </a>
-
-  <a [routerLink]="['/page-book/id']">
-    <img class="picture-book" src="assets/pictures/Book_inconnu.png" alt="book picture">
-  </a>
-  <a [routerLink]="['/page-book/id']">
-    <img class="picture-book" src="assets/pictures/Book_inconnu.png" alt="book picture">
-  </a>
-  <a [routerLink]="['/page-book/id']">
-    <img class="picture-book" src="assets/pictures/Book_inconnu.png" alt="book picture">
-  </a>
-  <a [routerLink]="['/page-book/id']">
-    <img class="picture-book" src="assets/pictures/Book_inconnu.png" alt="book picture">
-  </a>
-  <a [routerLink]="['/page-book/id']">
-    <img class="picture-book" src="assets/pictures/Book_inconnu.png" alt="book picture">
-  </a>
-  <a [routerLink]="['/page-book/id']">
-    <img class="picture-book" src="assets/pictures/Book_inconnu.png" alt="book picture">
-  </a>
-
 </div>
+
+<!--  <a [routerLink]="['/page-book/id']">-->
+<!--    <img class="picture-book" src="assets/pictures/L-Inconnue-du-portrait.jpg" alt="book picture">-->
+<!--  </a>-->
+<!--  <a [routerLink]="['/page-book/id']">-->
+<!--    <img class="picture-book" src="assets/pictures/La-Louisiane.jpg" alt="book picture">-->
+<!--  </a>-->
+<!--  <a [routerLink]="['/page-book/id']">-->
+<!--    <img class="picture-book" src="assets/pictures/La-vie-heureuse.jpg" alt="book picture">-->
+<!--  </a>-->
+<!--  <a [routerLink]="['/page-book/id']">-->
+<!--    <img class="picture-book" src="assets/pictures/Les-Yeux-de-Mona.jpg" alt="book picture">-->
+<!--  </a>-->
+<!--  <a [routerLink]="['/page-book/id']">-->
+<!--    <img class="picture-book" src="assets/pictures/Book_inconnu.png" alt="book picture">-->
+<!--  </a>-->
+
+<!--  <a [routerLink]="['/page-book/id']">-->
+<!--    <img class="picture-book" src="assets/pictures/Du-meme-bois.jpg" alt="book picture">-->
+<!--  </a>-->
+<!--  <a [routerLink]="['/page-book/id']">-->
+<!--    <img class="picture-book" src="assets/pictures/Un-soir-d-ete.jpg" alt="book picture">-->
+<!--  </a>-->
+<!--  <a [routerLink]="['/page-book/id']">-->
+<!--    <img class="picture-book" src="assets/pictures/Du-meme-bois.jpg" alt="book picture">-->
+<!--  </a>-->
+<!--  <a [routerLink]="['/page-book/id']">-->
+<!--    <img class="picture-book" src="assets/pictures/L-Inconnue-du-portrait.jpg" alt="book picture">-->
+<!--  </a>-->
+<!--  <a [routerLink]="['/page-book/id']">-->
+<!--    <img class="picture-book" src="assets/pictures/La-Louisiane.jpg" alt="book picture">-->
+<!--  </a>-->
+<!--  <a [routerLink]="['/page-book/id']">-->
+<!--    <img class="picture-book" src="assets/pictures/La-vie-heureuse.jpg" alt="book picture">-->
+<!--  </a>-->
+<!--  <a [routerLink]="['/page-book/id']">-->
+<!--    <img class="picture-book" src="assets/pictures/Les-Yeux-de-Mona.jpg" alt="book picture">-->
+<!--  </a>-->
+<!--  <a [routerLink]="['/page-book/id']">-->
+<!--    <img class="picture-book" src="assets/pictures/Book_inconnu.png" alt="book picture">-->
+<!--  </a>-->
+
+<!--  <a [routerLink]="['/page-book/id']">-->
+<!--    <img class="picture-book" src="assets/pictures/Du-meme-bois.jpg" alt="book picture">-->
+<!--  </a>-->
+<!--  <a [routerLink]="['/page-book/id']">-->
+<!--    <img class="picture-book" src="assets/pictures/Un-soir-d-ete.jpg" alt="book picture">-->
+<!--  </a>-->
+<!--  <a [routerLink]="['/page-book/id']">-->
+<!--    <img class="picture-book" src="assets/pictures/Book_inconnu.png" alt="book picture">-->
+<!--  </a>-->
+<!--  <a [routerLink]="['/page-book/id']">-->
+<!--    <img class="picture-book" src="assets/pictures/Book_inconnu.png" alt="book picture">-->
+<!--  </a>-->
+<!--  <a [routerLink]="['/page-book/id']">-->
+<!--    <img class="picture-book" src="assets/pictures/Book_inconnu.png" alt="book picture">-->
+<!--  </a>-->
+
+
