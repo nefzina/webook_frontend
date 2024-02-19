@@ -1,8 +1,8 @@
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import { Observable} from "rxjs";
 import {Injectable} from "@angular/core";
-import {Book} from "./book/domain/models/book";
-import {IUser} from "./profile/domain/interface/IUser";
+import {Book} from "../book/domain/models/book";
+import {IUser} from "../profile/domain/interface/IUser";
 
 @Injectable({
   providedIn: 'root'
