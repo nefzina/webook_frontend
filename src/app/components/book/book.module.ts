@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {BookService} from "../../../services/book.service";
-import {MockBookService} from "../../../services/mock-book.service";
-import {BookComponent} from "../book.component";
+import {BookService} from "./book.service";
+import {MockBookService} from "./mock-book.service";
 import {RouterModule, Routes} from "@angular/router";
+import {BookDetailComponent} from "./book-detail/book-detail.component";
 
 const bookRoutes: Routes = [
-  { path: 'book', component: BookComponent }
+  { path: 'book', component: BookDetailComponent }
 ];
 
 @NgModule({
@@ -19,4 +19,4 @@ const bookRoutes: Routes = [
     { provide: BookService, useClass: MockBookService}
   ]
 })
-export class BookModuleModule { }
+export class BookModule { }
