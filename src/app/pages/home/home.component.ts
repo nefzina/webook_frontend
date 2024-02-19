@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import {HeaderComponent} from "../../components/header/header.component";
 import {FooterComponent} from "../../components/footer/footer.component";
-import {LoginComponent} from "../login/login.component";
-import {RegisterComponent} from "../register/register.component";
+import {LoginComponent} from "../auth/login/login.component";
+
 
 @Component({
   selector: 'app-home',
@@ -11,7 +11,6 @@ import {RegisterComponent} from "../register/register.component";
     HeaderComponent,
     FooterComponent,
     LoginComponent,
-    RegisterComponent
   ],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
