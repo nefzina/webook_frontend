@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {Book} from "./book";
+import {Book} from "../models/book";
 import {HttpClient} from "@angular/common/http";
 import {catchError, Observable, of, tap} from "rxjs";
 
