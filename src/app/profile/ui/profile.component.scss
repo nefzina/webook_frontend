@@ -1,0 +1,17 @@
+.profile {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column-reverse;
+  width: 100%;
+  max-width: 1280px;
+  padding: 15px;
+
+  .myLibrary {
+    width: 100%;
+    max-width: 896px;
+  }
+
+  .personalInfo {
+    width: 100%;
+  }
+}
