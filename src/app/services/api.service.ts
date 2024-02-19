@@ -12,8 +12,10 @@ export class ApiService {
   }
 
   private getAuthHeaders(): HttpHeaders {
+    const token=localStorage.getItem("authToken")
     return new HttpHeaders({
-      "Content-type": "application/json"
+      "Content-type": "application/json",
+      "Authorization": `Bearer ${token}`
     })
   }
   get<T>( endpoint: string): Observable<T> {
