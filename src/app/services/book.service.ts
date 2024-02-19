@@ -9,16 +9,8 @@ import {catchError, Observable, of, tap} from "rxjs";
 export class BookService {
 
   bookList: Book[] | undefined;
-  constructor(private http: HttpClient) { }
+  constructor() { }
 
-  getBookList(config: string): Observable<Book[]> {
-    return this.http.get<Book[]>('http://localhost:8080').pipe(
-      tap((bookList) => console.table(bookList)),
-      catchError((error) => {
-        console.log(error);
-        return of([]);
-      })
-    );
-  }
+
 
 }
