@@ -12,8 +12,8 @@
 <p class="container-titre-recommendation">Recommendation</p>
 
 <div class="container-recommendation" *ngFor="let mockBook of mockBooks">
-  <a [routerLink]="['page-book', mockBook.id]">
-    <img class="picture-book" [src]="mockBook.image" alt="book picture">
+  <a [routerLink]="['page-book', mockBook.book_id]">
+    <img class="picture-book" [src]="mockBook.book_image" alt="book picture">
   </a>
 </div>
 
