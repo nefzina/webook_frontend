@@ -4,7 +4,8 @@ import {HttpClient} from "@angular/common/http";
 import {map, Observable} from "rxjs";
 import { SignUpModel} from "../../login/login.component";
 
-
+// contient également une méthode register() qui prend un SignUpModel en argument.
+// Cette méthode envoie une requête HTTP POST à un serveur pour enregistrer un nouvel utilisateur. Le SignUpModel est défini dans votre composant LoginComponent.
 @Injectable({
   providedIn: 'root'
 })
