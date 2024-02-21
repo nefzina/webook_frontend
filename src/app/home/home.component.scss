@@ -53,13 +53,8 @@ button {
 }
 button:hover {
   border-width: 2px;
-  font-size: 110%;
+  transform: scale(1.25);
 }
-
-button:active {
-  transform: scale(0.95);
-}
-
 
 
 .container-titre-recommendation{
@@ -72,15 +67,24 @@ button:active {
 
 }
 .container-recommendation {
-
-  text-align: center;
-  padding-left: 15%;
-  padding-right: 15%;
+  display: flex;
+  padding-right: 200px;
+  padding-left: 200px;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 .picture-book {
   width: 150px;
   height: auto;
 
-  margin: 25px
+  margin: 25px;
+  transition: filter 1000ms;
+}
+.picture-book:hover {
+  filter: none;
+  transform: scale(1.07);
+}
+.picture-book:not(:hover) {
+  filter: grayscale(100%) brightness(100%);
 }
 
