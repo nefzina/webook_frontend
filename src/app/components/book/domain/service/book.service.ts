@@ -24,6 +24,10 @@ export class BookService {
     ]
   constructor(private http: HttpClient) { }
 
+  getBookById(id: number) {
+      return this.mockBooks.find(book => book.book_id === id);
+  }
+
   getBookList(config: string): Observable<Book[]> {
     return this.http.get<Book[]>('http://localhost:8080').pipe(
       tap((bookList) => console.table(bookList)),

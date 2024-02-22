@@ -74,17 +74,17 @@ button:hover {
   justify-content: space-around;
 }
 .picture-book {
-  width: 150px;
+  width: 175px;
   height: auto;
-
-  margin: 25px;
-  transition: filter 1000ms;
+  transform: rotate3d(0, -2, 1, 20deg);
+  margin: 10px;
+  transition: filter 1000ms, transform 300ms;
 }
 .picture-book:hover {
+  transform: scale(1.15);
   filter: none;
-  transform: scale(1.07);
 }
-.picture-book:not(:hover) {
-  filter: grayscale(100%) brightness(100%);
-}
+//.picture-book:not(:hover) {
+//  filter: grayscale(100%) brightness(100%);
+//}
 
