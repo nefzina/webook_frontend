@@ -1,110 +1,45 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { FormControl, FormGroup } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import {MatCardModule} from "@angular/material/card";
+import {MatInputModule} from "@angular/material/input";
+import {FormsModule} from "@angular/forms";
+import {MatButtonModule} from "@angular/material/button";
+import {AuthenticationService} from "../domain/services/authentication.service";
+import {Router} from "@angular/router";
+import {LoginRequestDto} from "../domain/dtos/login-request.dto";
+import { MatFormField} from "@angular/material/input";
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [],
+  imports: [CommonModule, MatCardModule, MatInputModule, FormsModule, MatButtonModule],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
-  // Initialisation du formulaire avec des contrôles pour txt, email et password	  // Initialisation du formulaire avec des contrôles pour txt, email et password
-  form = new FormGroup({
-    txt: new FormControl(''),
-    email: new FormControl(''),
-    password: new FormControl(''),
-  });
+  username: string = "";
+  password: string = "";
+  loginError: string = "";
+  constructor(private authService: AuthenticationService, private router: Router) {}
 
+  login() {
+    if (this.username !== "" && this.password !== "") {
+      const loginDto = new LoginRequestDto(this.username, this.password);
 
-  constructor(private router: Router) {
-  }
-
-
-  // Méthode pour gérer l'inscription
-  onRegister() {
-    if (this.form.valid) { // Vérifie si le formulaire est valide
-      const signUpModel = new SignUpModel();
-      const txtControl = this.form.get('txt');
-      const emailControl = this.form.get('email');
-      const passwordControl = this.form.get('password');
-
-      // Vérifie si les contrôles existent et ont des valeurs
-      if (txtControl && emailControl && passwordControl) {
-        if (txtControl.value !== null && emailControl.value !== null && passwordControl.value !== null) {
-          signUpModel.txt = txtControl.value;
-          signUpModel.email = emailControl.value;
-          signUpModel.password = passwordControl.value;
-
-          console.log(signUpModel);
-
-          this.router.navigate(['/home']); // Navigue vers la page d'accueil
-        } else {
-          console.error('Form controls do not have values'); // Affiche une erreur si les contrôles n'ont pas de valeurs
-        }
-      } else {
-        console.error('Form controls do not exist'); // Affiche une erreur si les contrôles n'existent pas
-      }
-    } else {
-      console.error('Form is not valid'); // Affiche une erreur si le formulaire n'est pas valide
-    }
-  }
-
-
-  // Méthode pour gérer la connexion
-  onLogin() {
-    if (this.form.valid) {
-      const loginModel = new LoginModel();
-      const emailControl = this.form.get('email');
-      const passwordControl = this.form.get('password');
-
-      // Vérifie si les contrôles existent et ont des valeurs
-      if (emailControl && passwordControl) {
-        if (emailControl.value !== null && passwordControl.value !== null) {
-          loginModel.email = emailControl.value;
-          loginModel.password = passwordControl.value;
-
-          console.log(loginModel);
-
-
-          const checkbox = document.getElementById('chk') as HTMLInputElement;	  // Méthode pour gérer l'inscription
-          if (checkbox) {
-            checkbox.checked = true;
+      this.authService.authenticate(loginDto.username, loginDto.password).subscribe(
+        (isLoggedIn) => {
+          if (isLoggedIn) {
+            this.router.navigate(['/home']);
+          } else {
+            this.loginError = "Nom d'utilisateur ou mot de passe incorrect.";
           }
-
-          this.router.navigate(['/home']);
-        } else {
-          console.error('Form controls do not have values'); // Affiche une erreur si les contrôles n'ont pas de valeurs
+        },
+        (error) => {
+          this.loginError = "Une erreur s'est produite lors de la tentative de connexion.";
         }
-      } else {
-        console.error('Form controls do not exist'); // Affiche une erreur si les contrôles n'existent pas
-      }
+      );
     } else {
-      console.error('Form is not valid'); // Affiche une erreur si le formulaire n'est pas valide
+      console.error('Username or password is empty'); // Affiche une erreur si le nom d'utilisateur ou le mot de passe est vide
     }
-  }
-
-}
-export class SignUpModel  {
-  txt: string;
-  email: string;
-  password: string;
-
-  constructor() {
-    this.txt = "";
-    this.email = "";
-    this.password= ""
-  } // Initialise txt, email et password à une chaîne vide
-}
-
-
-export class LoginModel  {
-  email: string;
-  password: string;
-
-  constructor() {
-    this.email = "";
-    this.password= ""
   }
 }

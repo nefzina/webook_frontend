@@ -2,10 +2,7 @@ import { Injectable } from '@angular/core';
 import {IAuthenticationService} from "./IAuthentication-service";
 import {HttpClient} from "@angular/common/http";
 import {map, Observable} from "rxjs";
-import { SignUpModel} from "../../login/login.component";
 
-// contient également une méthode register() qui prend un SignUpModel en argument.
-// Cette méthode envoie une requête HTTP POST à un serveur pour enregistrer un nouvel utilisateur. Le SignUpModel est défini dans votre composant LoginComponent.
 @Injectable({
   providedIn: 'root'
 })
@@ -30,9 +27,8 @@ export class AuthenticationService implements IAuthenticationService {
       }))
   }
 
-  register(signUpModel: SignUpModel): Observable<boolean> {
-
-    return this.httpClient.post<any>("http://localhost:8080/register", signUpModel, {
+  register(username: string, firstname: string, lastname: string, email: string, password: string, zipCode: string, city: string, bookPreferences: string): Observable<boolean> {
+    return this.httpClient.post<any>("http://localhost:8080/register", JSON.stringify({username, firstname, lastname, email, password, zipCode, city, bookPreferences}), {
       headers: {
         "content-type": "application/json"
       },
@@ -46,5 +42,8 @@ export class AuthenticationService implements IAuthenticationService {
         return false;
       }))
   }
-}
 
+
+
+
+}
