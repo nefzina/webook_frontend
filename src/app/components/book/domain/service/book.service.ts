@@ -11,21 +11,21 @@ export class BookService {
   bookList: Book[] | undefined;
 
     mockBooks = [
-        {book_id: 1, book_name: 'Du même bois',book_image: 'assets/pictures/Du-meme-bois.jpg',book_author: '', book_edition: '', book_resume: '', book_isbn: '',book_review: ''},
-        {book_id: 2, book_name: 'La louisiane',book_image: 'assets/pictures/La-Louisiane.jpg',book_author: '', book_edition: '', book_resume: '', book_isbn: '',book_review: ''},
-        {book_id: 3, book_name: 'La vie heureuse',book_image: 'assets/pictures/La-vie-heureuse.jpg',book_author: '', book_edition: '', book_resume: '', book_isbn: '',book_review: ''},
-        {book_id: 4, book_name: 'Les Yeux de Mona',book_image: 'assets/pictures/Les-Yeux-de-Mona.jpg',book_author: '', book_edition: '', book_resume: '', book_isbn: '',book_review: ''},
-        {book_id: 5, book_name: 'Un soir d\'éte',book_image: 'assets/pictures/Un-soir-d-ete.jpg',book_author: '', book_edition: '', book_resume: '', book_isbn: '',book_review: ''},
-        {book_id: 6, book_name: 'Du même bois',book_image: 'assets/pictures/Du-meme-bois.jpg',book_author: '', book_edition: '', book_resume: '', book_isbn: '',book_review: ''},
-        {book_id: 7, book_name: 'Du même bois',book_image: 'assets/pictures/Du-meme-bois.jpg',book_author: '', book_edition: '', book_resume: '', book_isbn: '',book_review: ''},
-        {book_id: 8, book_name: 'Du même bois',book_image: 'assets/pictures/Du-meme-bois.jpg',book_author: '', book_edition: '', book_resume: '', book_isbn: '',book_review: ''},
-        {book_id: 9, book_name: 'Du même bois',book_image: 'assets/pictures/Du-meme-bois.jpg',book_author: '', book_edition: '', book_resume: '', book_isbn: '',book_review: ''},
-        {book_id: 10, book_name: 'Du même bois',book_image: 'assets/pictures/Du-meme-bois.jpg',book_author: '', book_edition: '', book_resume: '', book_isbn: '',book_review: ''},
+        {id: 1, name: 'Du même bois',image: 'assets/pictures/Du-meme-bois.jpg',author: '', edition: '', resume: '', isbn: '',review: ''},
+        {id: 2, name: 'La louisiane',image: 'assets/pictures/La-Louisiane.jpg',author: '', edition: '', resume: '', isbn: '',review: ''},
+        {id: 3, name: 'La vie heureuse',image: 'assets/pictures/La-vie-heureuse.jpg',author: '', edition: '', resume: '', isbn: '',review: ''},
+        {id: 4, name: 'Les Yeux de Mona',image: 'assets/pictures/Les-Yeux-de-Mona.jpg',author: '', edition: '', resume: '', isbn: '',review: ''},
+        {id: 5, name: 'Un soir d\'éte',image: 'assets/pictures/Un-soir-d-ete.jpg',author: '', edition: '', resume: '', isbn: '',review: ''},
+        {id: 6, name: 'Du même bois',image: 'assets/pictures/Du-meme-bois.jpg',author: '', edition: '', resume: '', isbn: '',review: ''},
+        {id: 7, name: 'Du même bois',image: 'assets/pictures/Du-meme-bois.jpg',author: '', edition: '', resume: '', isbn: '',review: ''},
+        {id: 8, name: 'Du même bois',image: 'assets/pictures/Du-meme-bois.jpg',author: '', edition: '', resume: '', isbn: '',review: ''},
+        {id: 9, name: 'Du même bois',image: 'assets/pictures/Du-meme-bois.jpg',author: '', edition: '', resume: '', isbn: '',review: ''},
+        {id: 10, name: 'Du même bois',image: 'assets/pictures/Du-meme-bois.jpg',author: '', edition: '', resume: '', isbn: '',review: ''},
     ]
   constructor(private http: HttpClient) { }
 
   getBookById(id: number) {
-      return this.mockBooks.find(book => book.book_id === id);
+      return this.mockBooks.find(book => book.id === id);
   }
 
   getBookList(config: string): Observable<Book[]> {
