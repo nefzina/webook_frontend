@@ -16,12 +16,29 @@ import {MatInputModule} from "@angular/material/input";
 import {FormsModule} from "@angular/forms";
 import {RegisterComponent} from "./auth/register/register.component";
 import { MatFormField} from "@angular/material/input";
+import {HttpClientModule} from "@angular/common/http";
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, MatFormField, RegisterComponent,HomeComponent, ProfileComponent, FooterComponent, MatCardModule, MatButtonModule, MatIconModule, HeaderComponent, ReactiveFormsModule, MatDividerModule, MatButtonModule, MatGridListModule, LoginComponent],
+  imports: [CommonModule,
+    RouterOutlet,
+    MatFormField,
+    RegisterComponent,
+    HttpClientModule,
+    HomeComponent,
+    ProfileComponent,
+    FooterComponent,
+    MatCardModule, MatButtonModule,
+    MatIconModule, HeaderComponent,
+    ReactiveFormsModule,
+    MatDividerModule,
+    MatButtonModule,
+    MatGridListModule,
+    LoginComponent],
+
+
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })

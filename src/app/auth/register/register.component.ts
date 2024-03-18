@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import { AuthenticationService } from '../domain/services/authentication.service';
 import { Router } from '@angular/router';
 import {MatCardModule} from "@angular/material/card";
@@ -7,6 +7,8 @@ import {CommonModule} from "@angular/common";
 import {FormsModule} from "@angular/forms";
 import {MatButtonModule} from "@angular/material/button";
 import {MatGridListModule} from '@angular/material/grid-list';
+import {MatSelectModule} from '@angular/material/select';
+
 
 
 
@@ -14,40 +16,41 @@ import {MatGridListModule} from '@angular/material/grid-list';
   selector: 'app-register',
   templateUrl: './register.component.html',
   standalone: true,
-  imports: [CommonModule, MatCardModule, MatInputModule, FormsModule, MatButtonModule, MatGridListModule],
+  imports: [CommonModule, MatCardModule, MatInputModule, FormsModule, MatButtonModule, MatSelectModule, MatGridListModule],
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent {
+
   username: string = "";
-  firstname: string = "";
-  lastname: string = "";
+
   email: string = "";
   password: string = "";
   confirmPassword: string = "";
-  zipCode: string = "";
+
   city: string = "";
-  bookPreferences: string = "";
+  category_preferences: string = "";
 
   constructor(private authService: AuthenticationService, private router: Router) {
   }
 
   register() {
+    //vérifie si le mot de passe et la confirmation sont identiques
     if (this.password !== this.confirmPassword) {
       alert("Les mots de passe ne correspondent pas.");
       return;
     }
-
-
-    this.authService.register(this.username, this.firstname, this.lastname, this.email, this.password, this.zipCode, this.city, this.bookPreferences).subscribe(
+//si les mots de passe correspondent, la méthode register du service d'authentification est appelée
+    this.authService.register(this.username, this.email, this.password, this.city, this.category_preferences).subscribe(
       (isRegistered) => {
         if (isRegistered) {
+          //Si l'inscription est réussie, l'utilisateur est redirigé vers la page de connexion
           this.router.navigate(['/login']);
         } else {
           console.error('Inscription échouée');
 
         }
       },
-      (error) => {
+      (error) => { //si erreur lors de l'appel à la méthode register message error
         console.error('Erreur lors de l\'inscription', error);
 
       }

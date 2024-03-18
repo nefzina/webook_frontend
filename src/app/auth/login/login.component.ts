@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {MatCardModule} from "@angular/material/card";
 import {MatInputModule} from "@angular/material/input";
@@ -7,7 +7,7 @@ import {MatButtonModule} from "@angular/material/button";
 import {AuthenticationService} from "../domain/services/authentication.service";
 import {Router} from "@angular/router";
 import {LoginRequestDto} from "../domain/dtos/login-request.dto";
-import { MatFormField} from "@angular/material/input";
+
 
 @Component({
   selector: 'app-login',
@@ -19,10 +19,13 @@ import { MatFormField} from "@angular/material/input";
 export class LoginComponent {
   username: string = "";
   password: string = "";
-  loginError: string = "";
+  loginError="";
+
+
   constructor(private authService: AuthenticationService, private router: Router) {}
 
   login() {
+
     if (this.username !== "" && this.password !== "") {
       const loginDto = new LoginRequestDto(this.username, this.password);
 
@@ -42,4 +45,6 @@ export class LoginComponent {
       console.error('Username or password is empty'); // Affiche une erreur si le nom d'utilisateur ou le mot de passe est vide
     }
   }
+
+
 }
