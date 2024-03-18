@@ -3,6 +3,7 @@ import {IAuthenticationService} from "./IAuthentication-service";
 import {HttpClient} from "@angular/common/http";
 import {map, Observable} from "rxjs";
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -27,8 +28,11 @@ export class AuthenticationService implements IAuthenticationService {
       }))
   }
 
-  register(username: string, firstname: string, lastname: string, email: string, password: string, zipCode: string, city: string, bookPreferences: string): Observable<boolean> {
-    return this.httpClient.post<any>("http://localhost:8080/register", JSON.stringify({username, firstname, lastname, email, password, zipCode, city, bookPreferences}), {
+
+
+
+  register(username: string, email: string, password: string, city: string, category_preferences: string): Observable<boolean> {
+    return this.httpClient.post<any>("http://localhost:8080/register", JSON.stringify({username, email, password, city, category_preferences}), {
       headers: {
         "content-type": "application/json"
       },
@@ -43,6 +47,12 @@ export class AuthenticationService implements IAuthenticationService {
       }))
   }
 
+  logout(): void {
+    // Supprimez l'indicateur de connexion de l'utilisateur du stockage local
+    localStorage.removeItem('loggedIn');
+
+    this.httpClient.post<any>("http://localhost:8080/logout", { withCredentials: true }).subscribe();
+  }
 
 
 
